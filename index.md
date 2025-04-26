@@ -18,7 +18,7 @@ hero:
       link: /interview/preparation
 
 features:
-  - title: MK
+  - title: MKk
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
