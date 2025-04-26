@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/interview-record/',
   srcDir: './', // 指定源文件目录为根目录
   title: "My Awesome Project",
   description: "A VitePress Site",
