@@ -1,3 +1,9 @@
+<script setup>
+import PasswordProtect from '../components/PasswordProtect.vue'
+</script>
+
+<PasswordProtect password="9527" title="请输入查看密码">
+
 ## 自我介绍
 
 来自xxx,
@@ -12,20 +18,15 @@
 
 当父子组件首次渲染时，生命周期钩子的执行顺序如下
 
-- 父组件先创建(created)，然后子组件创建
-- 子组件先挂载(mounted)完成，然后父组件挂载完成
+* 父 beforeCreate->父 created->父 beforeMount->子 beforeCreate->子 created->子 beforeMount->子 mounted->父 mounted
 
 当父组件状态变化导致重新渲染时：
 
-- 父组件更新触发子组件更新
-- 子组件先完成更新，然后父组件完成更新
+* 父 beforeUpdate->子 beforeUpdate->子 updated->父 updated
 
 当父组件销毁时：
 
-1. **父组件**：`beforeDestroy`
-2. **子组件**：`beforeDestroy`
-3. **子组件**：`destroyed`
-4. **父组件**：`destroyed`
+* 父 beforeDestroy->子 beforeDestroy->子 destroyed->父 destroyed
 
 ## vue:v-model是什么东西
 
@@ -109,8 +110,30 @@ webpack实现tree shaking的原理是基于ES6模块化语法的静态特性。
 
 
 
+## tsconfig.json 配置
+
+
+
+## vue2到vue3变了什么东西
+
+v-model 从绑定 value 和input 事件, 变成 modelValue 和 update:modelValue
+
+.sync 去除
+
+filter去除,可用methods 或 computed 
+
+新的改用composition api, 旧的继续先保持options写法
+新版没有this, 方法还要 defineExpose 出去, 才能被调用
+
+computed watch等变成按需引入
+
+composition api生命周期和options 不一样
+
 ##想反问的东西
 
 评价一下我的表现,有什么不足之处呢
 
 想了解一下贵司react的使用情况,大概会到什么水平可以胜任岗位呢
+
+
+</PasswordProtect>
